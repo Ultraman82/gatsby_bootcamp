@@ -13,7 +13,6 @@ export default function header() {
       }
     }
   `)
-  console.log(data)
   return (
     <header className={headerStyles.header}>
       <h1>

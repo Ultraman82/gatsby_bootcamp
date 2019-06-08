@@ -16,7 +16,6 @@ const BlogPage = () => {
       }
     }
   `)
-  console.log("blog page data: ", data)
   return (
     <Layout>
       <h1>Blog</h1>
