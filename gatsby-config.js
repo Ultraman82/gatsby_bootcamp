@@ -10,6 +10,7 @@ module.exports = {
     author: "Edgar Jeong",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-contentful",
       options: {

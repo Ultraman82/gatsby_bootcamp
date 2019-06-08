@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Head from "../components/head"
 
 export const data = graphql`
   query($slug: String!) {
@@ -16,12 +17,6 @@ export const data = graphql`
 `
 
 const Blog = props => {
-  /* console.log(
-    "url:",
-    props.data.contentfulBlogPost.body.json.content.data.target.fields.file[
-      "en-US"
-    ].url
-  ) */
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -33,6 +28,7 @@ const Blog = props => {
   }
   return (
     <Layout>
+      <Head title={props.data.contentfulBlogPost.title}></Head>
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(
